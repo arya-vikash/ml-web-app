@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./css_main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>ML models</title>
+    <style>
+        body{
+            background-color: #fbfbfb;
+        }
+        .navbar {
+            padding-top: 30px !important;
+        }
+        .head{
+            text-align: center;
+            margin-top: 13vh;
+
+        }
+        .head h1{
+            font-weight: bolder;
+            font-size: 400%;
+            color: #ff7300;
+        }
+        .head .about{
+            margin-top: 1.5em;
+            margin-bottom: 2em;
+        }
+        .head p{
+            font-size: 18px;
+        }
+        
+        .result{
+          margin-top: 35px;
+        }
+        .footer-container{
+            margin-top: 3.5em;
+            padding-top: 1.5em;
+            padding-bottom: 2em;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+        <div class="container">
+          
+            <ul class="navbar-nav ms-auto" >
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="/" style="margin-right: 40px;font-size:20px">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="margin-right: 40px;font-size:20px">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 40px;font-size:20px">
+                    Models
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/fuel">fuel efficiency</a></li>
+                    <li><a class="dropdown-item " href="/iris">Iris Flower</a></li>
+                    <li><a class="dropdown-item active" href="/wine">Wine quality</a></li>
+                    <li><a class="dropdown-item" href="/fake_news">Fake News</a></li>
+                    <li><a class="dropdown-item" href="/spam_email">Spam Email</a></li>
+                  </ul>
+                </li>
+              </ul>
+        </div>
+      </nav>
+      
+    <div class="container">
+        <div class="row head">
+            <h1>Wine Quality Prediction</h1>
+            <div class="col-12 col-md-8 offset-md-2 about">
+                <p>
+                    Here Wine Quality is divided into three categories bd,good,best
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <center>
+
+                    <div id='card1'>
+                        <form  data-toggle="validator" role="form" method="POST", action="{{url_for('predict_wine')}}">
+                          
+                            <input type="text" name='fixed acidity'  placeholder="fixed acidity" required >
+                            <input type="text" name='volatile acidity' placeholder="volatile acidity" required> 
+                            <input type="text" name='citric acid' placeholder="citric acid" required> 
+                            <input type="text" name='residual sugar' placeholder="residual sugar" required> 
+                            <input type="text" name='chlorides' placeholder="chlorides">
+                            <input type="text" name='free sulfur dioxide' placeholder="free sulfur dioxide" required> 
+                            <input type="text" name='density' placeholder="density" required> 
+                            <input type="text" name='ph' placeholder="ph" required>
+                            <input type="text" name='sulphates' placeholder="sulphates" required>
+                            <input type="text" name='alcohol' placeholder="alcohol" required>
+                            <input type="text" name='type' placeholder="type" required>
+                             <br><br>
+                            <button type="submit" class="btn btn-primary" value='predict!' >predict</button>
+                        </form>
+                    </div> 
+                </center>
+            </div>
+            <div class="col-12 result">
+              <center>
+                  {%if data == 1%}
+                  <h3>Given wine is of <b>bad</b> quality</h3>
+                  {%elif data == 10%}
+                  <h3>Given wine is of <b>good</b> quality</h3>
+                  {%elif data == 100%}
+                  <h3>Given wine is of <b>finest</b> quality</h3>
+                  {%endif%}
+              </center>
+          </div>
+        </div>
+        
+    </div>
+
+<footer class="footer-container white-text-container" >
+  <div class="container-fluid" >
+    <div class="row">
+
+     
+      <div class="col-xs-12">
+        <center>
+          <h6>made by vikash arya &copy; 2021</h6>
+          
+
+        </center>        
+        
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
+</html>

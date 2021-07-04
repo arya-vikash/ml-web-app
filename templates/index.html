@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./css_main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>ML models</title>
+    <style>
+        body{
+            background-color: #fbfbfb;
+        }
+        .navbar {
+            padding-top: 30px !important;
+        }
+        .model-card-row{
+          margin-bottom: 5em;
+        }
+        .head{
+            text-align: center;
+            margin-top: 13vh;
+
+        }
+        .head h1{
+            font-weight: bolder;
+            font-size: 400%;
+            color: #ff7300;
+        }
+        .head .about{
+            margin-top: 3.5em;
+            margin-bottom: 5em;
+        }
+        .head p{
+            font-size: 18px;
+        }
+        .model-card .card{
+            border: rgb(231, 231, 231) 1px solid;
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px  1px rgb(221, 221, 221);
+            width: 300px;
+            height: 430px;
+        }
+        .model-card .card img{
+            width: 300px;
+            height: 50% !important;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .model-card .card .card-body{
+            padding: 20px ;
+            
+        }
+        .model-card .card .card-body .card-title{
+            color: #333;
+            font-size: large;
+            font-weight: bold;
+        }
+        .model-card .card .card-body .card-text{
+            color: #333;
+            font-size: 15px;
+            
+        }
+        .footer-container{
+            margin-top: 3.5em;
+            padding-top: 1.5em;
+            padding-bottom: 2em;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+        <div class="container">
+          
+            <ul class="navbar-nav ms-auto" >
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/" style="margin-right: 40px;font-size:20px">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="margin-right: 40px;font-size:20px">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 40px;font-size:20px">
+                    Models
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/fuel">fuel efficiency</a></li>
+                    <li><a class="dropdown-item" href="/iris">Iris Flower</a></li>
+                    <li><a class="dropdown-item" href="/wine">Wine quality</a></li>
+                    <li><a class="dropdown-item" href="/fake_news">Fake News</a></li>
+                    <li><a class="dropdown-item" href="/spam_email">Spam Email</a></li>
+                  </ul>
+                </li>
+              </ul>
+        </div>
+      </nav>
+      
+    <div class="container">
+        <div class="row head">
+            <h1>Machine Learning Models</h1>
+            <div class="col-12 col-md-10 offset-md-1 about">
+                <p><b>What is machine learning ?...</b>Machine learning is a method of data analysis that automates analytical model building.
+                   It is a branch of artificial intelligence based on the idea that systems can learn from data,
+                    identify patterns and make decisions with minimal human intervention.<br>
+                  Here are some machine learning models which predict/classify the output based on the given input data.
+               </p>
+            </div>
+        </div>
+        <center>
+        <div class="row model-card-row">
+          <div class="col-12 col-md-4 model-card">
+            <div class="card">
+                <img
+                  src="https://media.istockphoto.com/vectors/empty-fuel-meter-vector-id1178050005?k=6&m=1178050005&s=170667a&w=0&h=Im1aFm6H1SUuUGyjxZi9rBsJ1FKJsdIWBfWDoUNrNa4="
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Fuel Efficiency </h5>
+                  <p class="card-text">
+                    This model takes featuresn of vehicle like cylinders,horsepower,weight etc.
+                     and predict the fuel efficiency of automobile in miles per gallon.
+                  </p>
+                  <a href="fuel" class="btn btn-primary">Open</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 model-card">
+            <div class="card">
+                <img
+                  src="https://cdn.britannica.com/11/174711-050-9A8DDE76/Flower-Iris-Siberian-flag-Garden-Close-up.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Iris Flower Species </h5>
+                  <p class="card-text">
+                    This model takes featuresn of iris flower like petal length,width etc.
+                     and predict the species to which given flower belongs.
+                  </p>
+                  <a href="/iris" class="btn btn-primary">Open</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-12 col-md-4 model-card">
+            <div class="card">
+                <img
+                  src="https://miro.medium.com/max/1140/1*ezPmZkV8VyL1Pppqa0fFhQ.jpeg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Wine Quality </h5>
+                  <p class="card-text">
+                    This model takes featuresn of wine like wine type,alcohol,PH,sulphur dioxide etc.
+                     and predict the quality of the given wine.
+                  </p>
+                  <a href="/wine" class="btn btn-primary">Open</a>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        <div class="row model-card-row">
+          <div class="col-12 col-md-4 model-card">
+            <div class="card">
+                <img
+                  src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX24388268.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Fake News </h5>
+                  <p class="card-text">
+                    This model takes the news article text as input for classification and classify if the given news article is a fake or real news.
+                  </p>
+                  <a href="/fake_news" class="btn btn-primary">Open</a>
+                </div>
+            </div>
+  
+          </div>
+          <div class="col-12 col-md-4 model-card">
+            <div class="card">
+                <img
+                  src="https://emailchef.com/wp-content/uploads/2019/06/email-spam-reputation-636x425.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Spam Email</h5>
+                  <p class="card-text">
+                    This model takes the email text as input for classification and classifiy if the given email is a spam or a ham(not spam).
+                  </p>
+                  <a href="/spam_email" class="btn btn-primary">Open</a>
+                </div>
+            </div>
+    
+          </div>
+        </div>
+        </center>
+    </div>
+
+<footer class="footer-container white-text-container" >
+  <div class="container-fluid" >
+    <div class="row">
+
+     
+      <div class="col-xs-12">
+        <center>
+          <h6>made by vikash arya &copy; 2021</h6>
+          
+
+        </center>        
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
+</html>
